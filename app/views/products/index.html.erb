@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 style="text-align: center; margin-bottom: 20px; text-decoration: underline; background-color: white; padding: 10px; border: 2px solid black; display: inline-block; border-radius: 5px;">LimeRoad</h1>
+  <div class="home-button">
+  <a href="/" class="btn-home">🏠</a>
+</div>
+  <div id="product-container" class="grid">
+    <% @products.each do |product| %>
+      <%= render product %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="loading" style="display: none;">Loading......</div>
+  <input type="hidden" id="offset" value="8">
+
+  <!-- This is the intersection observer trigger -->
+  <div id="observer-trigger"></div>
+</div>
+
+<%= javascript_include_tag "infinite_scroll", defer: true %>
